@@ -1,0 +1,136 @@
+body {
+	margin: 0;
+	padding: 0;
+	line-height: 1.5em;
+	font-family: Helvetica, Arial, sans-serif;
+	font-size: 13px;
+	color: #333333;
+}
+
+
+a:link, a:visited {
+ color: #750a20;
+
+  text-decoration: none;
+} 
+a:active, a:hover 
+{
+ color: blue;
+}
+
+p {
+	margin: 0 0 5px 0;
+	padding: 0px;
+}
+
+h1 {
+	margin: 0 0 5px 0;
+	padding: 10px 0 10px 0;
+	font-size: 24px;
+	font-weight: bold;
+	line-height: 28px;
+	color: #750a20;
+}
+
+
+#container {
+	margin: auto;
+	width: 100%;
+}
+#templatemo_currentdate {
+	float: right;
+	width: 300px;
+	margin: 70px 15px 0 0;
+	text-align: right;
+	font-weight: bold;
+}
+#content {
+	float: left;
+	width: 1000px;
+}
+
+
+#contact{
+margin-top: 300px;
+}
+.footer{
+	background:#000000;
+	padding: 3em 0;
+}
+.f-left{
+	float:left;
+	width: 52%;
+}
+.f-left-left{
+	float:left;
+	width: 24%;
+}
+.f-left-left  ul{
+	padding:0;
+	margin:0;
+}
+.f-left-left  ul li{
+	display:block;
+	margin: .5em 0;
+}
+.f-left-left  ul li.value{
+	font-size:18px;
+	font-weight:500;
+	color: #FFF;
+}
+.f-left-left ul li a{
+	color: #FFF;
+	font-size: 14px;
+	text-decoration: none;
+}
+.f-left-left ul li a:hover{
+	color:#3498DB;
+	transition:.5s all;
+	-webkit-transition:.5s all;
+	-moz-transition:.5s all;
+	-o-transition:.5s all;
+	-ms-transition:.5s all;
+}
+.f-right{
+	float:right;
+	width: 33%;
+}
+.f-right h4{
+	font-size:18px;
+	font-weight:500;
+	color:#FFF;
+}
+form{
+	position:relative;
+	margin-top:10px;
+}
+input[type="text"] {
+	font-size: 14px;
+	color:rgb(255, 254, 254);
+	width: 100%;
+	outline: none;
+	border: none;
+	background: #363636;
+	margin-bottom: 1.2em;
+	padding: .7em;
+	-webkit-appearance: none;
+}
+input[type="submit"] {
+	color:rgb(235, 229, 229);
+	background:#555555;
+	font-size: 14px;
+	border:none;
+	padding:.7em;
+	position: absolute;
+	top: 0;
+	right: 0;
+}
+input[type="submit"]:hover{
+	background:rgb(78, 169, 230);
+	transition:.5s all;
+	-webkit-transition:.5s all;
+	-moz-transition:.5s all;
+	-o-transition:.5s all;
+	-ms-transition:.5s all;
+}
+

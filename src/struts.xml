@@ -1,0 +1,66 @@
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+     "https://struts.apache.org/dtds/struts-2.5.dtd">
+<struts>
+<package name="SSH" extends="struts-default" namespace="/">
+
+    <interceptors>
+     <interceptor name="authorty" class="com.sise.ssh.gh.interceptor.AuthorityInterceptor"/>
+     <interceptor-stack name="myStack">
+     <interceptor-ref name="defaultStack"/>
+     <interceptor-ref name="authorty"/>
+     </interceptor-stack>
+     </interceptors>
+        <global-results>
+      <result name="login">/login.jsp</result>
+      </global-results>
+     <action name="login" class="com.sise.ssh.gh.action.UserAction">
+     <result name="success" type="redirectAction">
+     <param name="actionName">logins</param>
+     <param name="namespace">/</param>
+     </result>
+     </action>
+     <action name="logins" class="com.sise.ssh.gh.action.UserAction" method="success">
+     <result name="ss">admin.jsp</result>
+     <interceptor-ref name="myStack"/>
+     </action>
+     
+<action name="*CAction" class="com.sise.ssh.gh.action.CategoryAction" method="{1}">
+    <result name="success" type="redirectAction">
+    <param name="actionName">listCAction</param>
+	<param name="namespace">/SSH</param>
+    </result>
+    <result name="update">/category/categoryUpdate.jsp</result>
+	<result name="list">/category/categoryList.jsp</result>
+	<allowed-methods>add,update,delete,list,updated</allowed-methods>
+</action>
+<action name="*NAction" class="com.sise.ssh.gh.action.NewsAction" method="{1}">
+	<result name="list">/news/newsList.jsp</result>
+	<result name="success" type="redirectAction">
+				<param name="actionName">listNewsNAction</param>
+				<param name="namespace">/SSH</param>
+			</result>
+
+    <result name="update">/news/newsUpdate.jsp</result>
+	<result name="clist">/news/newsAdd.jsp</result>
+	<result name="getinfo">/news/newsContent.jsp</result>
+	<allowed-methods>addNews,updateNews,updatedNews,deleteNews,listNews,getList,getNewsInfo,getCategory</allowed-methods>
+</action> 
+
+
+
+<action name="*QAction" class="com.sise.ssh.gh.action.QtAction" method="{1}">
+	<result name="qt">/index.jsp</result>
+	<result name="success" type="redirectAction">
+				<param name="actionName">qtlistNewsQAction</param>
+				<param name="namespace">/SSH</param>
+			</result>
+	<result name="qgetinfo">/qtnewsContent.jsp</result>
+	<result name="list">/index.jsp</result>
+		<result name="nice">/newsSearch.jsp</result>
+		<result name="nice1">/newsSearchTime.jsp</result>
+	<allowed-methods>qtgetList,qtgetNewsInfo,qtgetCategory,qtlistNews,search,searchTime</allowed-methods>
+</action> 
+   
+</package>
+</struts>

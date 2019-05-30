@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.sise.ssh.gh.po">
+	<class name="News" table="news">
+		<id name="id" type="integer">
+			<generator class="native"/>
+		</id>
+		<property name="title" type="string" not-null="true" length="20" />		
+		<property name="content" type="string"  not-null="true"/>
+		<property name="issueTime" type="java.util.Date"/>
+		<property name="newsfrom" type="string" not-null="true"/>
+		<many-to-one name="category"  column="category_id" class="Category" lazy="false"/>      <!--多对一关联映射  -->
+	</class>
+</hibernate-mapping>
